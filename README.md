@@ -13,3 +13,7 @@
 -   [在线生成表格](https://www.tablesgenerator.com)
 -   [LaTeX 符号对照表](https://github.com/mk43/BlogResource/blob/master/LaTex/LATEX数学符号表.pdf)
 -   [LaTeX 基础教程](https://zilutian.github.io/latex-tutorial-chinese/)
+
+## 致谢
+
+本模版是 [HFUT_Thesis](https://github.com/netcan/HFUT_Thesis) 修改而来，感谢原作者的辛勤付出。
