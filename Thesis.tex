@@ -1,0 +1,37 @@
+\documentclass[mode=final]{hfut}
+
+% 各项信息，请注意填写
+\input{info.tex}
+
+\begin{document}
+\newgeometry{left=3cm, right=3cm, top=2.54cm, bottom=2.54cm}
+% 封面
+\input{tex/pages/cover}
+% 中文题目页
+\input{tex/pages/chinese_title}
+% 英文题目页
+\input{tex/pages/english_title}
+
+\newgeometry{left=2.8cm, right=2.8cm, top=3.14cm, bottom=3.14cm}
+\pagenumbering{Roman}
+\pagestyle{contentstyle}
+% 声明页
+\input{tex/pages/statement}
+% 摘要页
+\input{tex/pages/abstract}
+% 目录页
+\input{tex/pages/toc}
+
+% 正文
+\pagenumbering{arabic}
+\input{tex/introduction}
+% 请根据需要在tex/目录下添加对应章节
+% 并使用\input{tex/...}命令引入
+
+% 参考文献
+\printbibliography[heading=hfut]
+% 致谢页
+\input{tex/pages/acknowledge}
+% 附录页，如不需要请注释掉
+\input{tex/pages/appendix}
+\end{document}
