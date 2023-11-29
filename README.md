@@ -5,7 +5,7 @@
 
 ## 使用说明
 
-直接下载[本项目](https://github.com/shinyypig/HFUT-Thesis/archive/refs/heads/main.zip)，并根据`Thesis.pdf`中的说明进行编译即可。
+直接下载本仓库，并根据`Thesis.pdf`中的说明进行编译即可。
 
 ## 相关教程
 
