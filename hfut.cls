@@ -84,7 +84,7 @@
     pdfborder={0 0 0},
     colorlinks=true,
     linkcolor={black},
-    urlcolor={black},
+    urlcolor={winered},
     filecolor={black},
     citecolor={black},
     linktoc=all,
@@ -203,9 +203,11 @@
 \crefname{example}{例}{例}
 \crefname{algorithm}{算法}{算法}
 
-\crefname{chapter}{章}{章}
 \crefname{section}{节}{节}
 \crefname{subsection}{小节}{小节}
+
+\crefformat{section}{第#2#1#3节}
+\crefformat{subsection}{第#2#1#3小节}
 
 \ctexset{
     space=auto,
@@ -308,6 +310,8 @@
 \renewcommand{\cftsecdotsep}{1.5} % section引线
 \renewcommand{\cftsecleader}{\cftdotfill{\cftsecdotsep}}
 \renewcommand{\cftsecpagefont}{}
+\setlength{\cftfignumwidth}{3.5em}
+\setlength{\cfttabnumwidth}{3.5em}
 
 % 插图清单
 \renewcommand{\cftfigpresnum}{\figurename\enspace}
@@ -378,11 +382,12 @@
 % 设置页眉页脚
 \fancypagestyle{contentstyle}{
     \fancyhf{}
-    \fancyhead[C]{\footnotesize{合肥工业大学本科毕业设计（论文）}}% structure elements
+    \fancyhead[C]{\footnotesize{合肥工业大学本科毕业设计（论文）}\vspace{0.1cm}}% structure elements
     \fancyfoot[C]{\footnotesize \thepage}% page number
     \renewcommand{\headrulewidth}{0.8pt}% header rule
     \renewcommand{\footrulewidth}{0pt}% footer rule
 }
+\setlength{\headheight}{13.68591pt}
 
 % 引用latex代码
 \RequirePackage{listings}
