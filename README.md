@@ -16,4 +16,4 @@
 
 ## 致谢
 
-本模版是 [HFUT_Thesis](https://github.com/netcan/HFUT_Thesis) 修改而来，感谢原作者的辛勤付出。
+本模版是基于 [HFUT_Thesis](https://github.com/netcan/HFUT_Thesis) 修改而来，感谢原作者的辛勤付出。
