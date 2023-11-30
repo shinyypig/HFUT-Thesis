@@ -151,9 +151,6 @@
         zihao=-4,
         fontset=fandol
     ]{ctex}
-    \setCJKmainfont{FandolSong-Regular.otf}
-    \setCJKsansfont{FandolHei-Regular.otf}[AutoFakeBold]
-    \setCJKmonofont{FandolFang-Regular.otf}[AutoFakeBold]
 }
 
 \ifdefstring{\HFUT@font}{adobe}{
