@@ -15,6 +15,10 @@
 \DeclareVoidOption{final}{\skv{mode=final}}
 \DeclareVoidOption{preprint}{\skv{mode=preprint}}
 
+\DeclareStringOption[fandol]{font}
+\DeclareVoidOption{fandol}{\skv{font=fandol}}
+\DeclareVoidOption{adobe}{\skv{font=adobe}}
+
 \DeclareDefaultOption{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessKeyvalOptions*\relax
 
@@ -47,6 +51,8 @@
 \RequirePackage{iftex}
 \RequirePackage{silence}
 \RequirePackage{fancyhdr}
+\RequirePackage{titlesec}
+\RequirePackage{indentfirst}
 
 % 定义颜色
 \definecolor{HEYELV}{HTML}{1a6840}
@@ -92,10 +98,7 @@
 
 % 设置页面大小边距等
 \RequirePackage{geometry}
-% \setlength{\headsep}{5pt}
-\setlength{\parindent}{4em}
 \setlength{\parskip}{0.5em}
-% \renewcommand{\baselinestretch}{1.2}
 \setlength{\marginparwidth}{2cm}
 
 % 使用cleveref包用于引用公式图片表格等
@@ -124,37 +127,6 @@
 \setmainfont{Times New Roman}[Scale = 1]
 \setsansfont{Times New Roman}[Scale = 0.9]
 
-\renewcommand{\today}{\number\year 年 \number\month 月 \number\day 日}
-
-\RequirePackage[
-    UTF8,
-    heading=true,
-    scheme=plain,
-    linespread=1.2,
-    zihao=-4,
-    fontset=none
-]{ctex}
-
-\defaultfontfeatures{Path = fonts/, Mapping=tex-text}
-
-\setCJKmainfont[
-    BoldFont=AdobeHeitiStd-Regular.otf,
-    ItalicFont=AdobeKaitiStd-Regular.otf,
-    SmallCapsFont=AdobeHeitiStd-Regular.otf
-]{AdobeSongStd-Light.otf}
-\setCJKsansfont{AdobeHeitiStd-Regular.otf}
-\setCJKmonofont{AdobeFangsongStd-Regular.otf}
-
-\setCJKfamilyfont{zhsong}{AdobeSongStd-Light.otf}
-\setCJKfamilyfont{zhhei}{AdobeHeitiStd-Regular.otf}
-\setCJKfamilyfont{zhfs}{AdobeFangsongStd-Regular.otf}
-\setCJKfamilyfont{zhkai}{AdobeKaitiStd-Regular.otf}
-
-\newcommand*{\songti}{\CJKfamily{zhsong}} % 宋体
-\newcommand*{\heiti}{\CJKfamily{zhhei}}   % 黑体
-\newcommand*{\kaishu}{\CJKfamily{zhkai}}  % 楷书
-\newcommand*{\fangsong}{\CJKfamily{zhfs}} % 仿宋
-
 % 字号设置
 \newcommand{\chuhao}{\fontsize{42pt}{\baselineskip}\selectfont}     % 字号设置
 \newcommand{\xiaochuhao}{\fontsize{36pt}{\baselineskip}\selectfont} % 字号设置
@@ -169,6 +141,56 @@
 \newcommand{\xiaowuhao}{\fontsize{9pt}{\baselineskip}\selectfont}   % 字号设置
 \newcommand{\liuhao}{\fontsize{7.875pt}{\baselineskip}\selectfont}  % 字号设置
 \newcommand{\qihao}{\fontsize{5.25pt}{\baselineskip}\selectfont}    % 字号设置
+
+% 设置中文字体
+\ifdefstring{\HFUT@font}{fandol}{
+    \RequirePackage[
+        UTF8,
+        scheme=plain,
+        linespread=1.2,
+        zihao=-4,
+        fontset=fandol
+    ]{ctex}
+    \setCJKmainfont{FandolSong-Regular.otf}
+    \setCJKsansfont{FandolHei-Regular.otf}[AutoFakeBold]
+    \setCJKmonofont{FandolFang-Regular.otf}[AutoFakeBold]
+}
+
+\ifdefstring{\HFUT@font}{adobe}{
+    \RequirePackage[
+        UTF8,
+        scheme=plain,
+        linespread=1.2,
+        zihao=-4,
+        fontset=none
+    ]{ctex}
+
+    \defaultfontfeatures{Path = fonts/, Mapping=tex-text}
+
+    \setCJKmainfont[
+        BoldFont=AdobeHeitiStd-Regular.otf,
+        ItalicFont=AdobeKaitiStd-Regular.otf,
+        SmallCapsFont=AdobeHeitiStd-Regular.otf
+    ]{AdobeSongStd-Light.otf}
+    \setCJKsansfont{AdobeHeitiStd-Regular.otf}[AutoFakeBold]
+    \setCJKmonofont{AdobeFangsongStd-Regular.otf}[AutoFakeBold]
+
+    \setCJKfamilyfont{zhsong}{AdobeSongStd-Light.otf}[AutoFakeBold]
+    \setCJKfamilyfont{zhhei}{AdobeHeitiStd-Regular.otf}[AutoFakeBold]
+    \setCJKfamilyfont{zhfs}{AdobeFangsongStd-Regular.otf}[AutoFakeBold]
+    \setCJKfamilyfont{zhkai}{AdobeKaitiStd-Regular.otf}[AutoFakeBold]
+
+    \newcommand*{\songti}{\CJKfamily{zhsong}} % 宋体
+    \newcommand*{\heiti}{\CJKfamily{zhhei}}   % 黑体
+    \newcommand*{\kaishu}{\CJKfamily{zhkai}}  % 楷书
+    \newcommand*{\fangsong}{\CJKfamily{zhfs}} % 仿宋
+}
+
+% 设置标题格式
+\titleformat{\section}{\centering \heiti \zihao{3} \bfseries}{\thesection}{0.5em}{}
+\titleformat{\subsection}{\heiti \zihao{-4}}{\thesubsection}{0.4em}{}
+\titleformat{\subsubsection}{\songti \zihao{-4} \bfseries}{\thesubsubsection}{0.4em}{}
+\setlength\parindent{2\ccwd}
 
 % 设置中文环境名称
 \theoremstyle{plain}% default
@@ -195,7 +217,6 @@
 \newcommand{\ebibname}{参考文献}
 \renewcommand\abstractname{摘\hspace{2em}要}
 \renewcommand{\ALG@name}{算法}
-\setlength\parindent{2\ccwd}
 \renewcommand{\abstracttextfont}{\sffamily\small\noindent\ignorespaces}
 % 新定义的引用名称
 \newcommand{\keywords}[1]{\vskip2ex\par\noindent\normalfont{\bfseries 关键词: } #1}
@@ -229,31 +250,12 @@
 \crefformat{section}{第#2#1#3节}
 \crefformat{subsection}{第#2#1#3小节}
 
-\ctexset{
-    space=auto,
-    section = {
-      format = \centering \heiti \sanhao \bfseries,
-      aftername = \hspace{0.5em},
-      afterindent = true,
-     },
-    subsection = {
-            format = \heiti \bfseries,
-            aftername = \hspace{0.4em},
-            afterindent = true,
-        },
-    subsubsection = {
-            format = \songti \bfseries,
-            aftername = \hspace{0.4em},
-            afterindent = true,
-        },
-}
-
 % 图表编号按section编排
 \counterwithin{figure}{section}
 \counterwithin{table}{section}
 
 % 设置图表标题格式
-\DeclareCaptionFormat{smallformat}{\songti \small #1#2#3}
+\DeclareCaptionFormat{smallformat}{\songti \zihao{-4} #1#2#3}
 \captionsetup{
     labelsep=quad,
     textformat=simple,
@@ -413,7 +415,7 @@
     \renewcommand{\headrulewidth}{0.8pt}% header rule
     \renewcommand{\footrulewidth}{0pt}% footer rule
 }
-\setlength{\headheight}{13.68591pt}
+\setlength{\headheight}{14pt}
 
 % 引用latex代码
 \RequirePackage{listings}
@@ -436,3 +438,8 @@
     tabsize=2,
     backgroundcolor=\color{lightgrey}
 }
+
+% 设置列表格式
+\RequirePackage{enumitem}
+\setlist[enumerate]{label=\arabic*., itemsep=0pt, parsep=0pt, leftmargin=2em, rightmargin=0pt,topsep=0pt, partopsep=0pt}
+\setlist[itemize]{label=\textbullet, itemsep=0pt, parsep=0pt, leftmargin=2em, rightmargin=0pt, topsep=0pt, partopsep=0pt}
