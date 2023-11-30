@@ -132,8 +132,28 @@
     scheme=plain,
     linespread=1.2,
     zihao=-4,
-    fontset=fandol
+    fontset=none
 ]{ctex}
+
+\defaultfontfeatures{Path = fonts/, Mapping=tex-text}
+
+\setCJKmainfont[
+    BoldFont=AdobeHeitiStd-Regular.otf,
+    ItalicFont=AdobeKaitiStd-Regular.otf,
+    SmallCapsFont=AdobeHeitiStd-Regular.otf
+]{AdobeSongStd-Light.otf}
+\setCJKsansfont{AdobeHeitiStd-Regular.otf}
+\setCJKmonofont{AdobeFangsongStd-Regular.otf}
+
+\setCJKfamilyfont{zhsong}{AdobeSongStd-Light.otf}
+\setCJKfamilyfont{zhhei}{AdobeHeitiStd-Regular.otf}
+\setCJKfamilyfont{zhfs}{AdobeFangsongStd-Regular.otf}
+\setCJKfamilyfont{zhkai}{AdobeKaitiStd-Regular.otf}
+
+\newcommand*{\songti}{\CJKfamily{zhsong}} % 宋体
+\newcommand*{\heiti}{\CJKfamily{zhhei}}   % 黑体
+\newcommand*{\kaishu}{\CJKfamily{zhkai}}  % 楷书
+\newcommand*{\fangsong}{\CJKfamily{zhfs}} % 仿宋
 
 % 字号设置
 \newcommand{\chuhao}{\fontsize{42pt}{\baselineskip}\selectfont}     % 字号设置
@@ -312,6 +332,12 @@
 \renewcommand{\cftsecpagefont}{}
 \setlength{\cftfignumwidth}{3.5em}
 \setlength{\cfttabnumwidth}{3.5em}
+% 目录行间距
+\setlength{\cftbeforesecskip}{0.2em}
+\setlength{\cftbeforesubsecskip}{0em}
+\setlength{\cftbeforesubsubsecskip}{0em}
+\setlength{\cftbeforefigskip}{0.2em}
+\setlength{\cftbeforetabskip}{0.2em}
 
 % 插图清单
 \renewcommand{\cftfigpresnum}{\figurename\enspace}
