@@ -7,7 +7,7 @@
 
 直接下载本仓库，并根据`Thesis.pdf`中的说明进行编译即可。
 
-Adobe 字体可以在[这里](https://github.com/shinyypig/HFUT-Thesis/releases/download/fonts/fonts.zip)下载。默认使用系统自带 Fandol 字体，但推荐使用 Adobe 字体，显示效果更好更美观。
+Adobe 字体可以从 Release 中下载。默认使用系统自带 Fandol 字体，但推荐使用 Adobe 字体，显示效果更好更美观。
 
 ## 相关教程
 
