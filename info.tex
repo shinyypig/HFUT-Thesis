@@ -6,9 +6,19 @@
 
 \newcommand{\supervisor}[1][【姓名】【职称】]{#1} % 导师姓名
 \newcommand{\studentID}[1][20xxxxxxxx]{#1} % 学号
-\newcommand{\studentNameCn}[1][Liangliang]{#1} % 填写中文姓名
+\newcommand{\studentNameCn}[1][亮亮]{#1} % 填写中文姓名
 \newcommand{\studentNameEn}[1][Liangliang]{#1} % 填写英文姓名
 
-\newcommand{\department}[1][【系全称】]{#1} % 系名称
+\newcommand{\department}[1][【学院全称】]{#1} % 学院全称
 \newcommand{\major}[1][【专业全称】]{#1} % 专业名称
 \newcommand{\enrolmentYear}[1][【20XX级】]{#1} % 入学年份
+
+% 自动获取当前年月日（如需手动指定日期，请注释掉下面三行）
+\newcommand{\finishedYear}[1][\the\year]{#1} % 论文完成日期: 年
+\newcommand{\finishedMonth}[1][\the\month]{#1} % 论文完成日期: 月
+\newcommand{\finishedDay}[1][\the\day]{#1} % 论文完成日期: 日
+
+% 手动指定日期（下面三行取消注释）
+% \newcommand{\finishedYear}{2024} % 论文完成日期: 年
+% \newcommand{\finishedMonth}{4} % 论文完成日期: 月
+% \newcommand{\finishedDay}{23} % 论文完成日期: 日

@@ -252,7 +252,7 @@
 \counterwithin{table}{section}
 
 % 设置图表标题格式
-\DeclareCaptionFormat{smallformat}{\songti \zihao{-4} #1#2#3}
+\DeclareCaptionFormat{smallformat}{\songti \zihao{5} #1#2#3}
 \captionsetup{
     labelsep=quad,
     textformat=simple,
@@ -266,7 +266,7 @@
 \renewenvironment{abstract}{
     {
             \begin{center}
-                \Large \songti \bfseries 摘\hspace{1em}要\vspace{1.1cm}
+                \zihao{-2} \songti \bfseries 摘\hspace{1em}要\vspace{1.1cm}
             \end{center}
         }
     \setlength{\parindent}{2em}
@@ -285,7 +285,7 @@
 \newenvironment{abstractEn}{
     {
             \begin{center}
-                \Large \bfseries ABSTRACT\vspace{1.5cm}
+                \zihao{-2} \bfseries ABSTRACT\vspace{1.5cm}
             \end{center}
         }
     \setlength{\parindent}{1em}
@@ -304,14 +304,14 @@
 % 目录名
 \renewcommand\contentsname{
     \begin{center}
-        \songti \Large \bfseries 目\hspace{1em}录 % （宋体，小二号，加粗；居中，单倍行距，段前0.5行、段后1.5行间距）
+        \songti \zihao{-2} \bfseries 目\hspace{1em}录 % （宋体，小二号，加粗；居中，单倍行距，段前0.5行、段后1.5行间距）
     \end{center}
     \vspace{1em}
 }
 % 插图清单
 \renewcommand\listfigurename{
     \begin{center}
-        \songti \Large \bfseries 插图清单 % （宋体，小二号，加粗；居中，单倍行距，段前0.5行、段后1.5行间距）
+        \songti \zihao{-2} \bfseries 插图清单 % （宋体，小二号，加粗；居中，单倍行距，段前0.5行、段后1.5行间距）
     \end{center}
     \vspace{1em}
 }
@@ -319,7 +319,7 @@
 % 表格清单
 \renewcommand\listtablename{
     \begin{center}
-        \songti \Large \bfseries 表格清单 % （宋体，小二号，加粗；居中，单倍行距，段前0.5行、段后1.5行间距）
+        \songti \zihao{-2} \bfseries 表格清单 % （宋体，小二号，加粗；居中，单倍行距，段前0.5行、段后1.5行间距）
     \end{center}
     \vspace{1em}
 }
@@ -351,7 +351,7 @@
     \phantomsection % 使得hyperref目录能够跳转到正确的位置
     \addcontentsline{toc}{section}{致\hspace{2em}谢} % 添加到目录中
     \begin{center}
-        \songti \Large \bfseries 致\hspace{2em}谢\end{center}\vspace{1.1cm}
+        \songti \zihao{-2} \bfseries 致\hspace{2em}谢\end{center}\vspace{1.1cm}
     \setlength{\parindent}{2em}
     \setlength{\parskip}{0.5em}
     \setlength{\baselineskip}{22pt} % 22磅行距，首行缩进1字符，段前、段后均为0行间距
@@ -359,9 +359,11 @@
     \par
 }{
     \par
+
     \hfill 作者：\studentNameCn
 
-    \hfill \finishedYear\enspace 年\finishedMonth\enspace 月\finishedDay\enspace 日
+    \hfill \finishedYear 年\finishedMonth 月\finishedDay 日
+
 }
 
 % 附录
@@ -371,7 +373,7 @@
     \phantomsection % 使得hyperref目录能够跳转到正确的位置
     \addcontentsline{toc}{section}{附\hspace{2em}录} % 添加到目录中
     \begin{center}
-        \songti \Large \bfseries 附\hspace{2em}录\end{center}\vspace{1.1cm}
+        \songti \zihao{3} \bfseries 附\hspace{2em}录\end{center}\vspace{1.1cm}
     \setlength{\parindent}{2em}
     \setlength{\parskip}{0.5em}
     \setlength{\baselineskip}{22pt} % 22磅行距，首行缩进1字符，段前、段后均为0行间距
@@ -379,11 +381,6 @@
     \par
 }{
 }
-
-% 获取当前年月日
-\newcommand{\finishedYear}[1][\the\year]{#1} % 论文完成日期: 年
-\newcommand{\finishedMonth}[1][\the\month]{#1} % 论文完成日期: 月
-\newcommand{\finishedDay}[1][\the\day]{#1} % 论文完成日期: 日
 
 % 月份英文
 \newcommand{\monthname}[1]{%
