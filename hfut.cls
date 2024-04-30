@@ -260,7 +260,14 @@
 }
 
 % 下划线
-\newcommand{\underlineFixlen}[2][3.5cm]{\underline{\makebox[#1][c]{#2}}}
+
+\newcommand{\underlineFixlen}[2][3.5cm]{
+    \uline{
+        \begin{minipage}[b]{#1}
+            \centering \setlength{\baselineskip}{10pt} #2
+        \end{minipage}
+    }
+}
 
 % 中文摘要
 \renewenvironment{abstract}{
