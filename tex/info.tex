@@ -1,17 +1,15 @@
 % 个人信息
-\newcommand{\privacy}[1][密级]{#1} % 密级
-\newcommand{\type}[1][【设计或者论文】]{#1} % 类型
-\newcommand{\titleCn}[1][合肥工业大学学位论文\LaTeX 模板]{#1} % 中文题目
-\newcommand{\titleEn}[1][\LaTeX -based HFUT Thesis Template \LaTeX -based HFUT Thesis Template]{#1} % 英文题目
-
-\newcommand{\supervisor}[1][【姓名】【职称】]{#1} % 导师姓名
-\newcommand{\studentID}[1][20xxxxxxxx]{#1} % 学号
-\newcommand{\studentNameCn}[1][亮亮]{#1} % 填写中文姓名
-\newcommand{\studentNameEn}[1][Liangliang]{#1} % 填写英文姓名
-
-\newcommand{\department}[1][【学院全称】]{#1} % 学院全称
-\newcommand{\major}[1][【专业全称】]{#1} % 专业名称
-\newcommand{\enrolmentYear}[1][【20XX级】]{#1} % 入学年份
+\def\privacy{密级} % 密级
+\def\type{设计或者论文} % 类型
+\def\titleCn{合肥工业大学学位论文\LaTeX 模板} % 中文题目
+\def\titleEn{\LaTeX based HFUT Thesis Template} % 英文题目
+\def\supervisor{姓名 职称} % 导师姓名
+\def\studentID{20xxxxxxxxx} % 学号
+\def\studentNameCn{亮亮} % 填写中文姓名
+\def\studentNameEn{Liangliang} % 填写英文姓名
+\def\department{学院全称} % 学院全称
+\def\major{专业全称} % 专业名称
+\def\enrolmentYear{2020级} % 入学年份
 
 % 自动获取当前年月日（如需手动指定日期，请注释掉下面三行）
 \newcommand{\finishedYear}[1][\the\year]{#1} % 论文完成日期: 年

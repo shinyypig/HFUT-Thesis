@@ -262,7 +262,7 @@
 % 下划线
 
 \newcommand{\underlineFixlen}[2][3.5cm]{
-    \uline{
+    \underline{
         \begin{minipage}[b]{#1}
             \centering \setlength{\baselineskip}{10pt} #2
         \end{minipage}
