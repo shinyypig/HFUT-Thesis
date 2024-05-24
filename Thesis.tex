@@ -14,7 +14,6 @@
 
 \newgeometry{left=2.8cm, right=2.8cm, top=3.14cm, bottom=3.14cm}
 \pagenumbering{Roman}
-\pagestyle{contentstyle}
 % 声明页
 \input{tex/pages/statement}
 % 摘要页
@@ -24,6 +23,7 @@
 
 % 正文
 \pagenumbering{arabic}
+\pagestyle{contentstyle}
 \input{tex/introduction}
 % 请根据需要在tex/目录下添加对应章节
 % 并使用\input{tex/...}命令引入
