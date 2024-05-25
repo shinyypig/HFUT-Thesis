@@ -105,6 +105,7 @@
 \RequirePackage[capitalise]{cleveref}
 % 公式引用只显示括号
 \crefname{equation}{}{}
+\numberwithin{equation}{section}
 % 设置bm为boldsymbol
 \newcommand{\bm}[1]{\boldsymbol{#1}}
 
