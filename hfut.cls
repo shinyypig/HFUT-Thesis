@@ -79,8 +79,7 @@
 \renewcommand{\supercite}[1]{%
     \textsuperscript{\cite{#1}}%
 }
-
-% \def\bibfont{\footnotesize}
+\def\bibfont{\zihao{5}\songti}
 % 设置引用文件
 \addbibresource{ref.bib}
 
@@ -261,7 +260,6 @@
 }
 
 % 下划线
-
 \newcommand{\underlineFixlen}[2][3.5cm]{
     \underline{
         \begin{minipage}[b]{#1}

@@ -6,33 +6,33 @@
 \begin{document}
 \newgeometry{left=3cm, right=3cm, top=2.54cm, bottom=2.54cm}
 % 封面
-\input{tex/pages/cover}
+\include{tex/pages/cover}
 % 中文题目页
-\input{tex/pages/chinese_title}
+\include{tex/pages/chinese_title}
 % 英文题目页
-\input{tex/pages/english_title}
+\include{tex/pages/english_title}
 
 \newgeometry{left=2.8cm, right=2.8cm, top=3.14cm, bottom=3.14cm}
 % 声明页
-\input{tex/pages/statement}
+\include{tex/pages/statement}
+
 \pagenumbering{Roman}
 % 摘要页
-\input{tex/abstract}
+\include{tex/abstract}
 % 目录页
-\input{tex/pages/toc}
+\include{tex/pages/toc}
 
 % 正文
 \pagenumbering{arabic}
 \pagestyle{contentstyle}
-\input{tex/introduction}
+\include{tex/introduction}
 % 请根据需要在tex/目录下添加对应章节
-% 并使用\input{tex/...}命令引入
+% 并使用\include{tex/...}命令引入
 
 % 参考文献
-\clearpage
 \printbibliography[heading=hfut]
 % 致谢页
-\input{tex/acknowledge}
+\include{tex/acknowledge}
 % 附录页，如不需要请注释掉
-\input{tex/appendix}
+\include{tex/appendix}
 \end{document}

@@ -10,9 +10,7 @@
 
     毕业设计（论文）中表达的观点纯属作者本人观点，与合肥工业大学无关。
 
-    毕业设计（论文）作者签名：\hfill 签名日期：\hspace{2em}年\hspace{2em}月\hspace{2em}日
-
-
+    毕业设计（论文）作者签名：\hfill 签名日期：\makebox[2em][c]{\signYear} 年 \makebox[1.5em][c]{\signMonth} 月 \makebox[1.5em][c]{\signDay} 日
 
     \vspace{2cm}
     \begin{center}
@@ -26,5 +24,12 @@
 
     学位论文作者签名：\hfill 指导教师签名：\hspace{7em}
 
-    签名日期：\hspace{2em}年\hspace{2em}月\hspace{2em}日\hfill 签名日期：\hspace{2em}年\hspace{2em}月\hspace{2em}日
+    签名日期：\makebox[2em][c]{\signYear} 年 \makebox[1.5em][c]{\signMonth} 月 \makebox[1.5em][c]{\signDay} 日\hfill 签名日期：\makebox[2em][c]{\signYear} 年 \makebox[1.5em][c]{\signMonth} 月 \makebox[1.5em][c]{\signDay} 日
+
+    \tikz[remember picture,overlay]{
+        \node at (current page.north east) [xshift=-10.8cm,yshift=-10.2cm] {\includegraphics[width=2cm]{img/sign_student}};
+        \node at (current page.north east) [xshift=-12.5cm,yshift=-22cm] {\includegraphics[width=2cm]{img/sign_student}};
+        \node at (current page.north east) [xshift=-4.5cm,yshift=-22cm] {\includegraphics[width=2cm]{img/sign_teacher}};
+    }
+
 \end{titlepage}
