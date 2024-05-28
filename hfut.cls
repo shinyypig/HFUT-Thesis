@@ -86,7 +86,7 @@
     citestyle=numeric-comp,
     bibstyle=gb7714-2015,
     sorting=none,
-    gbalign=left
+    gbalign=right
 ]{biblatex}
 \defbibheading{hfut}[\ebibname]{
     \section*{#1}
