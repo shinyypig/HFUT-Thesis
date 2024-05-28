@@ -80,7 +80,7 @@
 \renewcommand{\supercite}[1]{%
     \textsuperscript{\cite{#1}}%
 }
-\def\bibfont{\wuhao\songti}
+\def\bibfont{\zihao{5}\songti}
 % 设置引用文件
 \addbibresource{ref.bib}
 
