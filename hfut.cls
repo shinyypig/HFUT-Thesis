@@ -70,7 +70,8 @@
     backend=biber,
     citestyle=numeric-comp,
     bibstyle=gb7714-2015,
-    sorting=none
+    sorting=none,
+    gbalign=left
 ]{biblatex}
 \defbibheading{hfut}[\ebibname]{
     \section*{#1}
@@ -79,7 +80,7 @@
 \renewcommand{\supercite}[1]{%
     \textsuperscript{\cite{#1}}%
 }
-\def\bibfont{\zihao{5}\songti}
+\def\bibfont{\wuhao\songti}
 % 设置引用文件
 \addbibresource{ref.bib}
 
@@ -184,9 +185,9 @@
 }
 
 % 设置标题格式
-\titleformat{\section}{\centering \heiti \zihao{3} \bfseries}{\thesection}{0.5em}{}
-\titleformat{\subsection}{\heiti \zihao{-4}}{\thesubsection}{0.4em}{}
-\titleformat{\subsubsection}{\songti \zihao{-4} \bfseries}{\thesubsubsection}{0.4em}{}
+\titleformat{\section}{\centering \heiti \sanhao \bfseries}{\thesection}{0.5em}{}
+\titleformat{\subsection}{\heiti \xiaosihao}{\thesubsection}{0.4em}{}
+\titleformat{\subsubsection}{\songti \xiaosihao \bfseries}{\thesubsubsection}{0.4em}{}
 \setlength\parindent{2\ccwd}
 
 % 设置中文环境名称
@@ -252,7 +253,7 @@
 \counterwithin{table}{section}
 
 % 设置图表标题格式
-\DeclareCaptionFormat{smallformat}{\songti \zihao{5} #1#2#3}
+\DeclareCaptionFormat{smallformat}{\songti \wuhao #1#2#3}
 \captionsetup{
     labelsep=quad,
     textformat=simple,
@@ -272,7 +273,7 @@
 \renewenvironment{abstract}{
     {
             \begin{center}
-                \zihao{-2} \songti \bfseries 摘\hspace{1em}要\vspace{1.1cm}
+                \xiaoerhao \songti \bfseries 摘\hspace{1em}要\vspace{1.1cm}
             \end{center}
         }
     \setlength{\parindent}{2em}
@@ -291,7 +292,7 @@
 \newenvironment{abstractEn}{
     {
             \begin{center}
-                \zihao{-2} \bfseries ABSTRACT\vspace{1.5cm}
+                \xiaoerhao \bfseries ABSTRACT\vspace{1.5cm}
             \end{center}
         }
     \setlength{\parindent}{1em}
@@ -310,14 +311,14 @@
 % 目录名
 \renewcommand\contentsname{
     \begin{center}
-        \songti \zihao{-2} \bfseries 目\hspace{1em}录 % （宋体，小二号，加粗；居中，单倍行距，段前0.5行、段后1.5行间距）
+        \songti \xiaoerhao \bfseries 目\hspace{1em}录 % （宋体，小二号，加粗；居中，单倍行距，段前0.5行、段后1.5行间距）
     \end{center}
     \vspace{1em}
 }
 % 插图清单
 \renewcommand\listfigurename{
     \begin{center}
-        \songti \zihao{-2} \bfseries 插图清单 % （宋体，小二号，加粗；居中，单倍行距，段前0.5行、段后1.5行间距）
+        \songti \xiaoerhao \bfseries 插图清单 % （宋体，小二号，加粗；居中，单倍行距，段前0.5行、段后1.5行间距）
     \end{center}
     \vspace{1em}
 }
@@ -325,7 +326,7 @@
 % 表格清单
 \renewcommand\listtablename{
     \begin{center}
-        \songti \zihao{-2} \bfseries 表格清单 % （宋体，小二号，加粗；居中，单倍行距，段前0.5行、段后1.5行间距）
+        \songti \xiaoerhao \bfseries 表格清单 % （宋体，小二号，加粗；居中，单倍行距，段前0.5行、段后1.5行间距）
     \end{center}
     \vspace{1em}
 }
@@ -337,12 +338,19 @@
 \renewcommand{\cftsecpagefont}{}
 \setlength{\cftfignumwidth}{3.5em}
 \setlength{\cfttabnumwidth}{3.5em}
-% 目录行间距
-\setlength{\cftbeforesecskip}{0.2em}
-\setlength{\cftbeforesubsecskip}{0em}
-\setlength{\cftbeforesubsubsecskip}{0em}
-\setlength{\cftbeforefigskip}{0.2em}
-\setlength{\cftbeforetabskip}{0.2em}
+% 设置目录标题字体
+\renewcommand{\cfttoctitlefont}{\songti\xiaosihao\hfill}
+\renewcommand{\cftsecfont}{\songti\xiaosihao}
+\renewcommand{\cftsecdotsep}{1.5}
+% 设置图表编号的宽度
+\setlength{\cftfignumwidth}{3.5em}
+\setlength{\cfttabnumwidth}{3.5em}
+% 设置目录行间距为22磅
+\setlength{\cftbeforesecskip}{7pt}
+\setlength{\cftbeforesubsecskip}{7pt}
+\setlength{\cftbeforesubsubsecskip}{7pt}
+\setlength{\cftbeforefigskip}{7pt}
+\setlength{\cftbeforetabskip}{7pt}
 
 % 插图清单
 \renewcommand{\cftfigpresnum}{\figurename\enspace}
@@ -355,9 +363,9 @@
     \clearpage
     \vspace*{-2em}
     \phantomsection % 使得hyperref目录能够跳转到正确的位置
-    \addcontentsline{toc}{section}{致\hspace{2em}谢} % 添加到目录中
+    \addcontentsline{toc}{section}{致谢} % 添加到目录中
     \begin{center}
-        \songti \zihao{-2} \bfseries 致\hspace{2em}谢\end{center}\vspace{1.1cm}
+        \songti \xiaoerhao \bfseries 致谢\end{center}\vspace{1.1cm}
     \setlength{\parindent}{2em}
     \setlength{\parskip}{0.5em}
     \setlength{\baselineskip}{22pt} % 22磅行距，首行缩进1字符，段前、段后均为0行间距
@@ -377,9 +385,9 @@
     \clearpage
     \vspace*{-2em}
     \phantomsection % 使得hyperref目录能够跳转到正确的位置
-    \addcontentsline{toc}{section}{附\hspace{2em}录} % 添加到目录中
+    \addcontentsline{toc}{section}{附录} % 添加到目录中
     \begin{center}
-        \songti \zihao{3} \bfseries 附\hspace{2em}录\end{center}\vspace{1.1cm}
+        \songti \xiaoerhao \bfseries 附录\end{center}\vspace{1.1cm}
     \setlength{\parindent}{2em}
     \setlength{\parskip}{0.5em}
     \setlength{\baselineskip}{22pt} % 22磅行距，首行缩进1字符，段前、段后均为0行间距
