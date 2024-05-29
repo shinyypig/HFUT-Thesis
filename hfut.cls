@@ -86,7 +86,7 @@
     citestyle=numeric-comp,
     bibstyle=gb7714-2015,
     sorting=none,
-    gbalign=right
+    gbalign=left
 ]{biblatex}
 \defbibheading{hfut}[\ebibname]{
     \section*{#1}
@@ -105,7 +105,7 @@
     pdfborder={0 0 0},
     colorlinks=true,
     linkcolor={black},
-    urlcolor={winered},
+    urlcolor={black},
     filecolor={black},
     citecolor={black},
     linktoc=all,
