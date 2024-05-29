@@ -103,11 +103,7 @@
 \RequirePackage{hyperref}
 \hypersetup{
     pdfborder={0 0 0},
-    colorlinks=true,
-    linkcolor={black},
-    urlcolor={black},
-    filecolor={black},
-    citecolor={black},
+    colorlinks=false,
     linktoc=all,
 }
 
@@ -340,7 +336,7 @@
 \setlength{\cfttabnumwidth}{3.5em}
 % 设置目录标题字体
 \renewcommand{\cfttoctitlefont}{\songti\xiaosihao\hfill}
-\renewcommand{\cftsecfont}{\songti\xiaosihao}
+\renewcommand{\cftsecfont}{\songti\xiaosihao\bfseries}
 \renewcommand{\cftsecdotsep}{1.5}
 % 设置图表编号的宽度
 \setlength{\cftfignumwidth}{3.5em}
