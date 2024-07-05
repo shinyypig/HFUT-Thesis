@@ -17,15 +17,25 @@
     {\includegraphics[width=3.76cm, height=3.76cm]{img/hfut_logo.png}\vspace{0.5cm}}
 
     {
-    \linespread{1.8}
-    \songti \sanhao
-    {\bfseries 类\hspace{2em}型：}\underlineFixlen[8.8cm]{\type}\\
-    {\bfseries 题\hspace{2em}目：}\underlineFixlen[8.8cm]{\titleCn}\\
-    {\bfseries 专业名称：}\underlineFixlen[8.8cm]{\major}\\
-    {\bfseries 入校年份：}\underlineFixlen[8.8cm]{\enrolmentYear}\\
-    {\bfseries 学生姓名：}\underlineFixlen[8.8cm]{\studentNameCn}\\
-    {\bfseries 指导教师：}\underlineFixlen[8.8cm]{\supervisor}\\
-    {\bfseries 学院名称：}\underlineFixlen[8.8cm]{\department}\\
-    {\bfseries 完成时间：}\underlineFixlen[8.8cm]{\finishedYear 年\finishedMonth 月}\\
+        \linespread{1.8}
+        \songti \sanhao
+        \StrLen{\titleCnb}[\length]
+        \begin{tabular}{rl}
+            {\bfseries 类\hspace{2em}型：} & \underlineFixlen[8.8cm]{\type}                           \\
+            {\bfseries 题\hspace{2em}目：} & \ifnum\length>0
+            \makecell[tl]{
+            \underlineFixlen[8.8cm]{\titleCna}                                                     \\
+                \underlineFixlen[8.8cm]{\titleCnb}
+            }                                                                                      \\
+            \else
+            \underlineFixlen[8.8cm]{\titleCna}                                                     \\
+            \fi
+            {\bfseries 专业名称：}           & \underlineFixlen[8.8cm]{\major}                          \\
+            {\bfseries 入校年份：}           & \underlineFixlen[8.8cm]{\enrolmentYear}                  \\
+            {\bfseries 学生姓名：}           & \underlineFixlen[8.8cm]{\studentNameCn}                  \\
+            {\bfseries 指导教师：}           & \underlineFixlen[8.8cm]{\supervisor}                     \\
+            {\bfseries 学院名称：}           & \underlineFixlen[8.8cm]{\department}                     \\
+            {\bfseries 完成时间：}           & \underlineFixlen[8.8cm]{\finishedYear 年\finishedMonth 月} \\
+        \end{tabular}
     }
 \end{titlepage}

@@ -53,6 +53,7 @@
 \RequirePackage{fancyhdr}
 \RequirePackage{titlesec}
 \RequirePackage{indentfirst}
+\RequirePackage{makecell}
 
 % 定义颜色
 \definecolor{HEYELV}{HTML}{1a6840}
