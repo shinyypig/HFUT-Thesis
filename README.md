@@ -5,7 +5,8 @@
 
 ## 使用说明
 
-直接下载本仓库，并根据`Thesis.pdf`中的说明进行编译即可。
+直接下载本仓库，并根据`Thesis.pdf`中的说明进行编译即可。注意使用XeLatex编译器, 测试版本XeTeX 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX)，texstudio-2.12.6-win-qt5.9.1
+在 TeXstudio 中，建议采用 XeLaTeX → Biber → XeLaTeX → XeLaTeX 的顺序编译：可先按 F5 运行 XeLaTeX，再按 F8 运行 Tools → Bibliography 处理参考文献，最后再按两次 F5 完成交叉引用、目录和参考文献更新。也可在“选项 → 设置 TeXstudio → 构建”中设置默认编译命令，实现一键完整编译。
 
 Adobe 字体可以从 [Release](https://github.com/shinyypig/HFUT-Thesis/releases) 中下载。默认使用系统自带 Fandol 字体，但推荐使用 Adobe 字体，显示效果更好更美观。
 

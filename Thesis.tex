@@ -3,6 +3,13 @@
 % 各项信息，请注意填写
 \input{tex/info}
 
+% ====================== 核心代码：每章自动换页 ======================
+\usepackage{titlesec}
+\titleformat*{\subsection}{\bfseries}
+% 让每个 section 之前自动换页
+\newcommand{\sectionbreak}{\clearpage}
+% ==================================================================
+
 \begin{document}
 \newgeometry{left=3cm, right=3cm, top=2.54cm, bottom=2.54cm}
 % 封面
@@ -16,7 +23,8 @@
 % 声明页
 \include{tex/pages/statement}
 
-\pagenumbering{Roman}
+% \pagenumbering{Roman}
+\pagenumbering{gobble}   % 关键：彻底不显示页码
 % 摘要页
 \include{tex/abstract}
 % 目录页
@@ -31,6 +39,7 @@
 
 % 参考文献
 \printbibliography[heading=hfut]
+
 % 致谢页
 \include{tex/acknowledge}
 % 附录页，如不需要请注释掉
