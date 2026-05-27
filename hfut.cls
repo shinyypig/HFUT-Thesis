@@ -84,14 +84,38 @@
 % 设置引用格式
 \RequirePackage[
     backend=biber,
-    citestyle=numeric-comp,
+    citestyle= numeric-comp, 
     bibstyle=gb7714-2015,
     sorting=none,
     gbalign=left,
+    gbnamefmt=lowercase,
+    giveninits=false,
+    maxbibnames=99,
+    minbibnames=99,
+    maxcitenames=99,
+    mincitenames=99,
     url=false,
     doi=false,
     eprint=false,
 ]{biblatex}
+
+% 英文作者姓名按“名 姓”输出
+\DeclareNameAlias{author}{given-family}
+\DeclareNameAlias{editor}{given-family}
+\DeclareNameAlias{translator}{given-family}
+
+\ExecuteBibliographyOptions{gbpub=false}
+% \ExecuteBibliographyOptions{gbdate=year}
+
+% 对于报纸等特殊文献，单独处理
+\DeclareFieldFormat[newspaper]{date}{\addspace#1}
+\renewbibmacro*{issue+date}{%
+  \printtext{%
+    \printfield{issue}%
+    \setunit*{\addspace}%
+    \printdate}%
+  \newunit}
+  
 \defbibheading{hfut}[\ebibname]{
     \section*{#1}
     \addcontentsline{toc}{section}{#1}
@@ -374,6 +398,7 @@
 }{
     \par
 
+    \vspace{1em}  % 空一行
     \hfill 作者：\studentNameCn
 
     \hfill \finishedYear 年\finishedMonth 月\finishedDay 日
@@ -413,12 +438,12 @@
     \or December% 12
     \fi
 }
-\newcommand{\finishedMonthEn}{\monthname{\the\month}}
+\newcommand{\finishedMonthEn}{\monthname{\finishedMonth}}
 
 % 设置页眉页脚
 \fancypagestyle{contentstyle}{
     \fancyhf{}
-    \fancyhead[C]{\footnotesize{合肥工业大学本科毕业设计（论文）}\vspace{0.1cm}}% structure elements
+    \fancyhead[C]{\footnotesize{合肥工业大学毕业设计（论文）}\vspace{0.1cm}}% structure elements
     \fancyfoot[C]{\footnotesize \thepage}% page number
     \renewcommand{\headrulewidth}{0.8pt}% header rule
     \renewcommand{\footrulewidth}{0pt}% footer rule
